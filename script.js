@@ -2,7 +2,9 @@ const progress = document.getElementById('progress')
 const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const circles = document.querySelectorAll('.circle')
-//since circles are many we use querySelectorAll and . with circle as it is a class name. 
+//since circles are many we use querySelectorAll and . with 
+//circle as it is a class name. 
+
 let currentActive = 1
 
 next.addEventListener('click', () => {
@@ -12,6 +14,7 @@ next.addEventListener('click', () => {
         currentActive = circles.length
     }
     update()
+    
 })
 
 prev.addEventListener('click', () => {
@@ -30,6 +33,8 @@ function update () {
         } else {
             circle.classList.remove('active')
         }
+        /*As soon as we press previous the first time, 
+        index of the last circle = 3, becomes equal to currentActive which becomes 3 now. Hence active class is removed.*/ 
     })
     const actives = document.querySelectorAll('.active')
     
